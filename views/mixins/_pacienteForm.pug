@@ -1,0 +1,9 @@
+mixin pacienteForm(paciente = {})
+  form(action=`/add/${paciente._id || ''}` method="POST" class="card")
+    label(for="nombre") nombre
+    input(type="text", name="nombre", value=paciente.nombre)
+    label(for="direccion") direccion
+    input(type="text", id="direccion" name="direccion", value=paciente.direccion)
+    label(for="telefono") telefono
+    input(type="text", id="telefono" name="telefono", value=paciente.telefono)
+    input(type="submit" value="Grabar" class="button")

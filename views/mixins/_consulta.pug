@@ -1,0 +1,11 @@
+mixin consulta(consulta)
+  .review__body
+    = h.moment(consulta.created).calendar()
+    p= consulta.descripcion
+    if consulta.piezas
+      p Piezas tratadas
+      ul.tags
+        each pieza in consulta.piezas
+          li.tag
+            .tag__link(href=`/tags/${tag}`)
+              span.tag__text ##{pieza}

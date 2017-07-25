@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .inner
+    h2 Editar mis datos
+    form.form(action="/account", method="POST")
+      label(for="nombre") Nombre
+      input(type="text" name="nombre" value=user.nombre)
+      label(for="email") Email
+      input(type="email" name="email" value=user.email)
+      input.button(type="submit" value="Update my account")

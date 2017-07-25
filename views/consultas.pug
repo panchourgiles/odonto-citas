@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .inner 
+    h2= title
+    table.table
+      thead
+        td Fecha
+        td Paciente
+        td Descripción
+      each consulta, i in consultas
+        tr
+          td= h.moment(consulta.created).calendar()
+          td: a(href=`/paciente/${consulta.paciente.slug}`) #{consulta.paciente.nombre}
+          td #{consulta.descripcion}

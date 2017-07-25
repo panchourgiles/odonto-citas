@@ -1,0 +1,20 @@
+mixin pacienteCard(paciente = {})
+  .store
+    .store__hero
+      .store__actions
+        if user
+          .store__action.store__action--edit
+            a(href=`/pacientes/${paciente._id}/edit` title="Editar")
+              != h.icon('pencil')
+          if paciente.consultas
+            .store__action.store__action--edit
+              a(href=`/paciente/${paciente.slug}#consultas` title="Consultas")
+                != h.icon('review2')
+                span= paciente.consultas.length
+          .store__action.store__action--edit
+            a(href=`/consultas/${paciente._id}/add` title="Agregar consulta")
+              != h.icon('add')
+    .store__details
+      p: a(href=`/paciente/${paciente.slug}`) #{paciente.nombre}
+      p= paciente.telefono
+      p= paciente.direccion

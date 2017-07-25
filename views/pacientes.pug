@@ -1,0 +1,13 @@
+extends layout
+
+include mixins/_pacienteCard
+include mixins/_pagination
+
+block content
+  .inner
+    h2= title
+    .stores
+      each paciente in pacientes
+        +pacienteCard(paciente)
+    +pagination(page, pages, count)
+    

@@ -1,0 +1,9 @@
+extends layout 
+
+include mixins/_pacienteForm
+
+block content
+  .inner
+    h2= title
+    +pacienteForm(paciente)
+    

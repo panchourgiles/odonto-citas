@@ -1,0 +1,20 @@
+extends layout
+
+include mixins/_consulta
+
+block content
+  .single__details.inner
+    h2: a(href=`/paciente/${paciente.slug}`) #{paciente.nombre}
+    p= paciente.direccion
+    p= paciente.telefono
+    
+    if user
+      a.button(href=`/consultas/${paciente._id}/add`) Crear Consulta
+    
+  .inner
+    if paciente.consultas.length
+      h2#consultas= 'Consultas'
+      .reviews
+        each consulta in paciente.consultas
+          .review
+            +consulta(consulta)

@@ -1,0 +1,9 @@
+extends layout 
+
+include mixins/_consultaForm
+
+block content
+  .inner
+    h2= title
+    +consultaForm(paciente)
+    

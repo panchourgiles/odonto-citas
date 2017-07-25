@@ -1,0 +1,5 @@
+mixin forgotForm()
+  form.form(method="POST", action="account/forgot")
+    label(for="email") Email
+    input(type="email" name="email" required)
+    input.button(type="submit" value="Recuperar contraseña")
